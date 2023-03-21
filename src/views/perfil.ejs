@@ -1,0 +1,22 @@
+<%- include('partials/head.ejs') %>
+<main class="container" style="height: 70vh;display: flex;align-items: center;justify-content: center;">
+    <div class="container-fluid">
+        <section class="col-12 col-md-6 m-auto">
+            <div class="card">
+                <div class="card-body text-bg-dark">
+                    <h5 class="text-uppercase text-center mb-3"><%- user.username%></h5>
+                    <p class="d-flex"><strong class="col-6">Email:</strong> <%- user.email%></p>
+                    <p class="d-flex"><strong class="col-6">Id de discord:</strong> <%- user.discordId%></p>
+                    <p class="d-flex"><strong class="col-6">Idioma:</strong> <%- user.locale%></p>
+                    <p class="d-flex"><strong class="col-6">Cuenta Premium:</strong> <%- user.premium == 0 ? "Básica" : "Premium"%></p>
+                    <p class="d-flex"><strong class="col-6">Cuenta Verificada:</strong> <%- user.verified == true ? "Si" : "No"%></p>
+                </div>
+            </div>
+            <div class="btn-group mt-4 d-flex" role="group" aria-label="Basic outlined example">
+                <a href="/dashboard" class="btn btn-outline-light">Regresar</a>
+                <a href="/dashboard/servidores" class="btn btn-outline-light">Ver Servidores</a>
+              </div>
+        </section>
+    </div>
+</main>
+<%- include('partials/footer.ejs') %>

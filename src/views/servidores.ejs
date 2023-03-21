@@ -1,0 +1,37 @@
+<%- include('partials/head.ejs') %>
+<main
+    class="container d-grid align-content-center justify-content-center my-5"
+>
+    <div class="container-fluid">
+        <div class="row">
+            <% user.guilds.forEach((guild) => { %>
+            <div class="col-4 text-center">
+                <% if(guild.icon){ %> <% if(guild.icon.substring(0,2) === "a_"){
+                %>
+                <img
+                    src="https://cdn.discordapp.com/icons/<%= guild.id%>/<%= guild.icon%>.gif"
+                />
+                <% } else {%>
+                <img
+                    src="https://cdn.discordapp.com/icons/<%= guild.id%>/<%= guild.icon%>.png"
+                />
+                <% } %> <% } else {%>
+                <img
+                    src="https://observatorioblockchain.com/wp-content/uploads/2022/03/discord.jpg"
+                    width="128"
+                    height="128"
+                    style="object-fit: contain"
+                />
+                <% } %>
+                <h5><%- guild.name %></h5>
+                <p>Id: <%- guild.id %></p>
+            </div>
+            <% }) %>
+        </div>
+        <div class="btn-group mt-4 d-flex col-md-6 col-12 mx-auto" role="group" aria-label="Basic outlined example">
+            <a href="/dashboard" class="btn btn-outline-light">Regresar</a>
+            <a href="/dashboard/perfil" class="btn btn-outline-light">Ver Perfil</a>
+          </div>
+    </div>
+</main>
+<%- include('partials/footer.ejs') %>
